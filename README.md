@@ -1,6 +1,8 @@
-Doodle2ImageDoodle2Image is a local generative AI web application designed to transform rough sketches into high-quality artistic images. The primary objective of this project is to run a complete Stable Diffusion and ControlNet pipeline efficiently on consumer-grade hardware with limited VRAM (such as the NVIDIA RTX 2050 with 4GB VRAM).Through rigorous hardware optimizations, the application delivers stable and fast local inference.FeaturesInteractive Canvas: Draw directly on the built-in canvas (equipped with pen, eraser, and flood-fill tools) or upload a reference image via drag-and-drop.Low VRAM Optimization: Engineered to operate on 4GB GPUs utilizing float16 precision, CPU offloading, attention slicing, and TinyVAE.High-Fidelity Generation: Utilizes DreamShaper 8 in conjunction with ControlNet Scribble to ensure the generated output accurately respects the structural lines of the original sketch.High Performance: Implements a UniPC scheduler to achieve quality results in 20 inference steps. Includes real-time generation metrics (processing time and structural match confidence).User Experience: Features a dark mode interface, customizable style presets (Anime, Cinematic, Oil Paint, etc.), and comprehensive undo/redo history tracking.ArchitectureFrontend: React + ViteBackend: Python (FastAPI)AI Pipeline: PyTorch + HuggingFace DiffusersBase Model: Lykon/dreamshaper-8ControlNet: lllyasviel/sd-controlnet-scribbleVAE: madebyollin/taesd (Optimized for low VRAM consumption)InstallationPrerequisitesPython 3.10+Node.jsNVIDIA GPU (Minimum 4GB VRAM recommended)
-1. Backend
-Setup
+Doodle2Image
+
+Doodle2Image is a local generative AI web application designed to transform rough sketches into high-quality artistic images. The primary objective of this project is to run a complete Stable Diffusion and ControlNet pipeline efficiently on consumer-grade hardware with limited VRAM (such as the NVIDIA RTX 2050 with 4GB VRAM).Through rigorous hardware optimizations, the application delivers stable and fast local inference.FeaturesInteractive Canvas: Draw directly on the built-in canvas (equipped with pen, eraser, and flood-fill tools) or upload a reference image via drag-and-drop.Low VRAM Optimization: Engineered to operate on 4GB GPUs utilizing float16 precision, CPU offloading, attention slicing, and TinyVAE.High-Fidelity Generation: Utilizes DreamShaper 8 in conjunction with ControlNet Scribble to ensure the generated output accurately respects the structural lines of the original sketch.High Performance: Implements a UniPC scheduler to achieve quality results in 20 inference steps. Includes real-time generation metrics (processing time and structural match confidence).User Experience: Features a dark mode interface, customizable style presets (Anime, Cinematic, Oil Paint, etc.), and comprehensive undo/redo history tracking.ArchitectureFrontend: React + ViteBackend: Python (FastAPI)AI Pipeline: PyTorch + HuggingFace DiffusersBase Model: Lykon/dreamshaper-8ControlNet: lllyasviel/sd-controlnet-scribbleVAE: madebyollin/taesd (Optimized for low VRAM consumption)InstallationPrerequisitesPython 3.10+Node.jsNVIDIA GPU (Minimum 4GB VRAM recommended)
+
+1. Backend Setup
 Open a terminal in the project directory and execute the following commands to configure the Python environment:
 # Navigate to the backend directory
 `cd backend`
@@ -14,7 +16,9 @@ Open a terminal in the project directory and execute the following commands to c
 
 # Install remaining dependencies
 `pip install fastapi "uvicorn[standard]" transformers diffusers accelerate safetensors huggingface-hub Pillow opencv-python-headless einops python-multipart aiofiles scipy "numpy<2.0"`
-2. Frontend SetupOpen a separate terminal window:
+
+2. Frontend Setup
+Open a separate terminal window:
 # Navigate to the frontend directory
 `cd frontend`
 
@@ -51,3 +55,4 @@ Resolution: Review the backend terminal for the specific exception, restart the 
 
 License
 This is an open-source project. You are free to fork, modify, and distribute the codebase.
+
