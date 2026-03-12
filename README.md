@@ -35,6 +35,7 @@ Terminal 1 (Backend Server):
 `$env:PYTORCH_CUDA_ALLOC_CONF = "max_split_size_mb:128"`
 
 `python server.py`
+
 Wait until the terminal outputs: Uvicorn running on http://127.0.0.1:8000
 
 Terminal 2 (Frontend Server):
@@ -55,4 +56,5 @@ Resolution: Review the backend terminal for the specific exception, restart the 
 
 License
 This is an open-source project. You are free to fork, modify, and distribute the codebase.
+
 
