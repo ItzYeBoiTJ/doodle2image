@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+transformers
+diffusers
+accelerate
+safetensors
+huggingface-hub
+Pillow
+opencv-python-headless
+einops
+python-multipart
+aiofiles
+scipy
+torch==2.2.0+cu121 --index-url https://download.pytorch.org/whl/cu121
+torchvision==0.17.0+cu121 --index-url https://download.pytorch.org/whl/cu121
